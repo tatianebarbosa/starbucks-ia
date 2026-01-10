@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página interativa inspirada em cafeteria, com vitrine de bebidas, personalização e carrinho.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="img/logo.png">
+    <title>Starbucks - Pedido Personalizado</title>
+</head>
+
+<body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+    <div class="page-shell">
+        <header class="topbar" aria-label="Navegação principal">
+            <a class="brand" href="#" aria-label="Início do projeto Starbucks">
+                <img src="img/logo.png" alt="Starbucks" class="logo">
+                <span>Starbucks</span>
+            </a>
+
+            <nav class="nav-links" aria-label="Menu principal">
+                <a href="#bebidas">Bebidas</a>
+                <a href="#personalizar">Personalizar</a>
+                <a href="#experiencia">Experiência</a>
+            </nav>
+
+            <button class="cart-shortcut" type="button" id="openCart" aria-label="Ver carrinho">
+                Carrinho
+                <span id="cartCount">0</span>
+            </button>
+        </header>
+
+        <main class="hero" id="conteudo">
+            <section class="hero-copy" aria-labelledby="hero-title">
+                <p class="eyebrow">café fresco todos os dias</p>
+                <h1 id="hero-title">Não é só café. É um momento <span>Starbucks</span>.</h1>
+                <p class="hero-description">
+                    Escolha sua bebida favorita, descubra novos sabores e transforme uma pausa comum em um ritual
+                    especial.
+                </p>
+
+                <div class="hero-actions" id="pedido">
+                    <a class="button-primary" href="#bebidas">Ver bebidas</a>
+                    <a class="button-secondary" href="#experiencia">Conhecer experiência</a>
+                </div>
+
+                <div class="stats" aria-label="Destaques">
+                    <div>
+                        <strong>100%</strong>
+                        <span>grãos selecionados</span>
+                    </div>
+                    <div>
+                        <strong>3</strong>
+                        <span>sabores em destaque</span>
+                    </div>
+                    <div>
+                        <strong>24h</strong>
+                        <span>clima de cafeteria</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="hero-product" aria-label="Bebida em destaque">
+                <div class="product-glow" aria-hidden="true"></div>
+                <img src="img/img1.png" alt="Copo Starbucks sabor clássico" class="main-cup" id="mainCup">
+
+                <div class="drink-info">
+                    <p class="drink-label">Destaque</p>
+                    <h2 id="drinkName">Clássico Verde</h2>
+                    <span id="drinkDescription">Café cremoso, final leve e energia para começar bem.</span>
+
+                    <dl class="drink-meta" aria-label="Detalhes da bebida">
+                        <div>
+                            <dt>Tamanho</dt>
+                            <dd id="drinkSize">Grande</dd>
+                        </div>
+                        <div>
+                            <dt>Perfil</dt>
+                            <dd id="drinkProfile">Suave</dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+        </main>
+
+        <section class="drink-picker" id="bebidas" aria-label="Escolha uma bebida">
+            <button class="thumb-button is-active" type="button" data-image="img/img1.png" data-color="#017143"
+                data-soft="rgba(1, 113, 67, 0.38)"
+                data-name="Clássico Verde" data-description="Café cremoso, final leve e energia para começar bem."
+                data-size="Grande" data-profile="Leve" data-price="R$ 18,90" data-price-value="18.9"
+                aria-label="Selecionar Clássico Verde">
+                <img src="img/thumb1.png" alt="">
+            </button>
+            <button class="thumb-button" type="button" data-image="img/img2.png" data-color="#d75287"
+                data-soft="rgba(215, 82, 135, 0.46)"
+                data-name="Creme de Frutas" data-description="Notas doces, textura gelada e um toque frutado marcante."
+                data-size="Pequeno" data-profile="Doce" data-price="R$ 21,50" data-price-value="21.5"
+                aria-label="Selecionar Creme de Frutas">
+                <img src="img/thumb2.png" alt="">
+            </button>
+            <button class="thumb-button" type="button" data-image="img/img3.png" data-color="#c77d32"
+                data-soft="rgba(199, 125, 50, 0.48)"
+                data-name="Caramelo Gelado" data-description="Caramelo aveludado, café equilibrado e aroma envolvente."
+                data-size="Extra" data-profile="Intenso" data-price="R$ 23,90" data-price-value="23.9"
+                aria-label="Selecionar Caramelo Gelado">
+                <img src="img/thumb3.png" alt="">
+            </button>
+        </section>
+
+        <section class="customizer-panel" id="personalizar" aria-labelledby="customizer-title">
+            <div class="customizer-heading">
+                <div>
+                    <p class="section-kicker">personalização</p>
+                    <h2 id="customizer-title">Monte sua bebida do seu jeito.</h2>
+                </div>
+                <div class="customizer-total">
+                    <span>Subtotal</span>
+                    <strong id="customizerTotal">R$ 18,90</strong>
+                </div>
+            </div>
+
+            <form class="customizer-form" id="customizerForm">
+                <fieldset class="customizer-group">
+                    <legend>Tamanho</legend>
+                    <div class="size-options">
+                        <label>
+                            <input type="radio" name="size" value="Pequeno" data-price="-2">
+                            <span>Pequeno</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="Grande" data-price="0" checked>
+                            <span>Grande</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="size" value="Extra" data-price="3">
+                            <span>Extra</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="customizer-group">
+                    <legend>Leite</legend>
+                    <div class="choice-options">
+                        <label>
+                            <input type="radio" name="milk" value="Integral" data-price="0" checked>
+                            <span>Integral <small>incluso</small></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="milk" value="Zero lactose" data-price="1.5">
+                            <span>Zero lactose <small>+ R$ 1,50</small></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="milk" value="Aveia" data-price="2.5">
+                            <span>Aveia <small>+ R$ 2,50</small></span>
+                        </label>
+                        <label>
+                            <input type="radio" name="milk" value="Amêndoas" data-price="2.5">
+                            <span>Amêndoas <small>+ R$ 2,50</small></span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="customizer-group">
+                    <legend>Calda</legend>
+                    <div class="choice-options multi-options">
+                        <label>
+                            <input type="checkbox" name="syrup" value="Sem calda" data-price="0" checked data-empty-option="true">
+                            <span>Sem calda <small>incluso</small></span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="syrup" value="Caramelo" data-price="2">
+                            <span>Caramelo <small>+ R$ 2,00</small></span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="syrup" value="Baunilha" data-price="2">
+                            <span>Baunilha <small>+ R$ 2,00</small></span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="syrup" value="Chocolate" data-price="2">
+                            <span>Chocolate <small>+ R$ 2,00</small></span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="customizer-group">
+                    <legend>Topping</legend>
+                    <div class="choice-options multi-options">
+                        <label>
+                            <input type="checkbox" name="topping" value="Sem topping" data-price="0" checked data-empty-option="true">
+                            <span>Sem topping <small>incluso</small></span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="topping" value="Cookie" data-price="2">
+                            <span>Cookie <small>+ R$ 2,00</small></span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="topping" value="Granulado" data-price="1.5">
+                            <span>Granulado <small>+ R$ 1,50</small></span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="topping" value="Caramelo crocante" data-price="2.5">
+                            <span>Caramelo crocante <small>+ R$ 2,50</small></span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset class="customizer-group customizer-extras">
+                    <legend>Extras</legend>
+                    <div class="extras-options">
+                        <label>
+                            <input type="checkbox" name="extra" value="Espresso extra" data-price="3">
+                            <span>Espresso extra + R$ 3,00</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="extra" value="Chantilly" data-price="2.5">
+                            <span>Chantilly + R$ 2,50</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="extra" value="Canela" data-price="0">
+                            <span>Canela grátis</span>
+                        </label>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+
+        <section class="order-panel" aria-labelledby="order-title">
+            <div>
+                <p class="section-kicker">pedido rápido</p>
+                <h2 id="order-title">Sua escolha, pronta para impressionar.</h2>
+            </div>
+
+            <div class="order-summary">
+                <div>
+                    <span>Bebida selecionada</span>
+                    <strong id="orderName">Clássico Verde</strong>
+                </div>
+                <div>
+                    <span>Personalização</span>
+                    <strong id="orderOptions">Grande • Integral</strong>
+                </div>
+                <div>
+                    <span>Valor</span>
+                    <strong id="orderPrice">R$ 18,90</strong>
+                </div>
+                <button class="order-button" type="button" id="orderButton">Adicionar pedido</button>
+            </div>
+        </section>
+
+        <div class="cart-modal" id="cartModal" hidden>
+        <section class="cart-panel" id="carrinho" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+            <button class="close-cart" type="button" id="closeCart" aria-label="Fechar carrinho">×</button>
+
+            <div class="cart-header">
+                <div>
+                    <p class="section-kicker">seu carrinho</p>
+                    <h2 id="cart-title">Pedidos adicionados</h2>
+                </div>
+                <button class="clear-cart" type="button" id="clearCart">Limpar carrinho</button>
+            </div>
+
+            <div class="cart-empty" id="cartEmpty">
+                <strong>Seu carrinho está vazio.</strong>
+                <span>Escolha uma bebida e clique em adicionar pedido.</span>
+            </div>
+
+            <div class="cart-items" id="cartItems" aria-live="polite"></div>
+
+            <div class="cart-total">
+                <div>
+                    <span>Total</span>
+                    <strong id="cartTotal">R$ 0,00</strong>
+                </div>
+                <button class="checkout-button" type="button" id="goCheckout">Finalizar compra</button>
+            </div>
+        </section>
+        </div>
+
+        <div class="checkout-modal" id="checkoutModal" hidden>
+        <section class="checkout-panel" id="checkout" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+            <button class="close-checkout" type="button" id="closeCheckout" aria-label="Fechar checkout">×</button>
+
+            <div class="checkout-header">
+                <div>
+                    <p class="section-kicker">finalização</p>
+                    <h2 id="checkout-title">Finalize seu pedido</h2>
+                </div>
+                <div class="checkout-badge">
+                    <span>Total do pedido</span>
+                    <strong id="checkoutTotal">R$ 0,00</strong>
+                </div>
+            </div>
+
+            <form class="checkout-form" id="checkoutForm" novalidate>
+                <div class="form-field">
+                    <label for="customerName">Nome</label>
+                    <input type="text" id="customerName" name="customerName" placeholder="Seu nome" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="customerPhone">Telefone</label>
+                    <input type="tel" id="customerPhone" name="customerPhone" placeholder="(11) 99999-9999" required>
+                </div>
+
+                <fieldset class="checkout-group">
+                    <legend>Como quer receber?</legend>
+                    <div class="checkout-options">
+                        <label>
+                            <input type="radio" name="deliveryType" value="Retirar na loja" checked>
+                            <span>Retirar na loja</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="deliveryType" value="Entrega">
+                            <span>Entrega</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="address-fields" id="addressFields" hidden>
+                    <div class="form-field">
+                        <label for="customerAddress">Endereço</label>
+                        <input type="text" id="customerAddress" name="customerAddress" placeholder="Rua, avenida...">
+                    </div>
+                    <div class="form-field">
+                        <label for="customerNumber">Número</label>
+                        <input type="text" id="customerNumber" name="customerNumber" placeholder="123">
+                    </div>
+                    <div class="form-field">
+                        <label for="customerComplement">Complemento</label>
+                        <input type="text" id="customerComplement" name="customerComplement" placeholder="Apto, bloco...">
+                    </div>
+                </div>
+
+                <fieldset class="checkout-group">
+                    <legend>Pagamento</legend>
+                    <div class="checkout-options payment-options">
+                        <label>
+                            <input type="radio" name="payment" value="Pix" checked>
+                            <span>Pix</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="payment" value="Cartão">
+                            <span>Cartão</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="payment" value="Dinheiro">
+                            <span>Dinheiro</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="form-field form-field-wide">
+                    <label for="orderNotes">Observações</label>
+                    <textarea id="orderNotes" name="orderNotes" rows="3" placeholder="Ex: sem gelo, açúcar separado..."></textarea>
+                </div>
+
+                <div class="checkout-summary">
+                    <span id="checkoutItemsCount">0 itens no carrinho</span>
+                    <strong id="checkoutSummaryTotal">R$ 0,00</strong>
+                </div>
+
+                <button class="confirm-order" type="submit" id="confirmOrder">Confirmar compra</button>
+                <p class="checkout-message" id="checkoutMessage" role="status"></p>
+            </form>
+
+            <article class="order-success" id="orderSuccess" hidden>
+                <span>Pedido confirmado</span>
+                <h3 id="successOrderNumber">Pedido #0000</h3>
+                <p id="successOrderText">Sua compra foi finalizada com sucesso.</p>
+            </article>
+        </section>
+        </div>
+
+        <section class="experience" id="experiencia" aria-label="Experiência Starbucks">
+            <article>
+                <span>01</span>
+                <h3>Escolha seu estilo</h3>
+                <p>Quente, gelado, intenso ou doce: a bebida acompanha o seu ritmo.</p>
+            </article>
+            <article>
+                <span>02</span>
+                <h3>Personalize do seu jeito</h3>
+                <p>Combine leite, calda, espresso extra e toppings para deixar tudo com a sua cara.</p>
+            </article>
+            <article>
+                <span>03</span>
+                <h3>Aproveite</h3>
+                <p>Uma pausa bonita, prática e com aquele visual que deixa o projeto mais profissional.</p>
+            </article>
+        </section>
+
+        <footer class="footer">
+            <span>Projeto Starbucks</span>
+            <p>Projeto feito com HTML, CSS e JavaScript para praticar interface, carrinho e finalização de pedido.</p>
+        </footer>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll(".thumb-button");
+        const customizerForm = document.querySelector("#customizerForm");
+        const customizerTotal = document.querySelector("#customizerTotal");
+        const mainCup = document.querySelector("#mainCup");
+        const drinkName = document.querySelector("#drinkName");
+        const drinkDescription = document.querySelector("#drinkDescription");
+        const drinkSize = document.querySelector("#drinkSize");
+        const drinkProfile = document.querySelector("#drinkProfile");
+        const orderName = document.querySelector("#orderName");
+        const orderOptions = document.querySelector("#orderOptions");
+        const orderPrice = document.querySelector("#orderPrice");
+        const orderButton = document.querySelector("#orderButton");
+        const openCart = document.querySelector("#openCart");
+        const cartModal = document.querySelector("#cartModal");
+        const closeCart = document.querySelector("#closeCart");
+        const cartCount = document.querySelector("#cartCount");
+        const cartItems = document.querySelector("#cartItems");
+        const cartEmpty = document.querySelector("#cartEmpty");
+        const cartTotal = document.querySelector("#cartTotal");
+        const clearCart = document.querySelector("#clearCart");
+        const goCheckout = document.querySelector("#goCheckout");
+        const checkoutModal = document.querySelector("#checkoutModal");
+        const closeCheckout = document.querySelector("#closeCheckout");
+        const checkoutForm = document.querySelector("#checkoutForm");
+        const checkoutTotal = document.querySelector("#checkoutTotal");
+        const checkoutSummaryTotal = document.querySelector("#checkoutSummaryTotal");
+        const checkoutItemsCount = document.querySelector("#checkoutItemsCount");
+        const checkoutMessage = document.querySelector("#checkoutMessage");
+        const confirmOrder = document.querySelector("#confirmOrder");
+        const addressFields = document.querySelector("#addressFields");
+        const orderSuccess = document.querySelector("#orderSuccess");
+        const successOrderNumber = document.querySelector("#successOrderNumber");
+        const successOrderText = document.querySelector("#successOrderText");
+        const root = document.documentElement;
+        const currencyFormatter = new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        });
+        let selectedBaseDrink = getDrinkFromButton(document.querySelector(".thumb-button.is-active"));
+        let selectedDrink;
+        let cart = loadCart();
+
+        function loadCart() {
+            try {
+                const storedCart = JSON.parse(localStorage.getItem("starbucksCart")) || [];
+
+                return Array.isArray(storedCart) ? storedCart : [];
+            } catch {
+                return [];
+            }
+        }
+
+        function escapeHTML(value) {
+            return String(value).replace(/[&<>"']/g, (character) => ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                "\"": "&quot;",
+                "'": "&#039;"
+            }[character]));
+        }
+
+        function getDrinkFromButton(button) {
+            return {
+                id: button.dataset.name,
+                name: button.dataset.name,
+                size: button.dataset.size,
+                profile: button.dataset.profile,
+                price: Number(button.dataset.priceValue),
+                image: button.dataset.image
+            };
+        }
+
+        function getRadioData(name) {
+            const input = customizerForm.querySelector(`input[name="${name}"]:checked`);
+
+            return {
+                name: input.value,
+                price: Number(input.dataset.price)
+            };
+        }
+
+        function getMultiData(name, fallbackName) {
+            const checkedInputs = [...customizerForm.querySelectorAll(`input[name="${name}"]:checked`)];
+            const selectedInputs = checkedInputs.length ? checkedInputs : [customizerForm.querySelector(`input[name="${name}"][value="${fallbackName}"]`)];
+
+            return selectedInputs.map((input) => ({
+                name: input.value,
+                price: Number(input.dataset.price)
+            }));
+        }
+
+        function getCustomization() {
+            const sizeInput = customizerForm.querySelector("input[name='size']:checked");
+            const milk = getRadioData("milk");
+            const syrups = getMultiData("syrup", "Sem calda");
+            const toppings = getMultiData("topping", "Sem topping");
+            const extras = [...customizerForm.querySelectorAll("input[name='extra']:checked")].map((input) => ({
+                name: input.value,
+                price: Number(input.dataset.price)
+            }));
+            const size = {
+                name: sizeInput.value,
+                price: Number(sizeInput.dataset.price)
+            };
+            const syrupsPrice = syrups.reduce((total, syrup) => total + syrup.price, 0);
+            const toppingsPrice = toppings.reduce((total, topping) => total + topping.price, 0);
+            const extrasPrice = extras.reduce((total, extra) => total + extra.price, 0);
+            const priceModifier = size.price + milk.price + syrupsPrice + toppingsPrice + extrasPrice;
+            const syrupNames = syrups.map((syrup) => syrup.name);
+            const toppingNames = toppings.map((topping) => topping.name);
+            const summaryParts = [
+                size.name,
+                milk.name,
+                ...syrupNames.filter((name) => name !== "Sem calda"),
+                ...toppingNames.filter((name) => name !== "Sem topping"),
+                ...extras.map((extra) => extra.name)
+            ].filter(Boolean);
+
+            return {
+                size: size.name,
+                milk: milk.name,
+                syrups: syrupNames,
+                toppings: toppingNames,
+                extras: extras.map((extra) => extra.name),
+                priceModifier,
+                summary: summaryParts.join(" • "),
+                details: [
+                    `Tamanho ${size.name}`,
+                    `Leite ${milk.name}`,
+                    ...syrupNames,
+                    ...toppingNames,
+                    ...extras.map((extra) => extra.name)
+                ].join(" • ")
+            };
+        }
+
+        function buildSelectedDrink() {
+            const customization = getCustomization();
+            const price = Math.max(0, selectedBaseDrink.price + customization.priceModifier);
+            const id = [
+                selectedBaseDrink.name,
+                customization.size,
+                customization.milk,
+                customization.syrups.join("+"),
+                customization.toppings.join("+"),
+                customization.extras.join("+") || "sem-extras"
+            ].join("|");
+
+            return {
+                ...selectedBaseDrink,
+                id,
+                size: customization.size,
+                price,
+                customizationSummary: customization.summary,
+                customizationDetails: customization.details
+            };
+        }
+
+        function updateOrderPreview() {
+            selectedDrink = buildSelectedDrink();
+            drinkSize.textContent = selectedDrink.size;
+            drinkProfile.textContent = selectedDrink.profile;
+            orderName.textContent = selectedDrink.name;
+            orderOptions.textContent = selectedDrink.customizationSummary;
+            orderPrice.textContent = currencyFormatter.format(selectedDrink.price);
+            customizerTotal.textContent = currencyFormatter.format(selectedDrink.price);
+        }
+
+        function saveCart() {
+            localStorage.setItem("starbucksCart", JSON.stringify(cart));
+        }
+
+        function getCartQuantity() {
+            return cart.reduce((total, item) => total + item.quantity, 0);
+        }
+
+        function getCartTotal() {
+            return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+        }
+
+        function getCartItemsLabel() {
+            const quantity = getCartQuantity();
+            return `${quantity} ${quantity === 1 ? "item" : "itens"} no carrinho`;
+        }
+
+        function renderCheckoutSummary() {
+            const total = currencyFormatter.format(getCartTotal());
+            checkoutTotal.textContent = total;
+            checkoutSummaryTotal.textContent = total;
+            checkoutItemsCount.textContent = getCartItemsLabel();
+        }
+
+        function openCartModal() {
+            cartModal.hidden = false;
+            document.body.classList.add("modal-open");
+        }
+
+        function closeCartModal() {
+            cartModal.hidden = true;
+            if (checkoutModal.hidden) {
+                document.body.classList.remove("modal-open");
+            }
+        }
+
+        function openCheckoutModal() {
+            closeCartModal();
+            checkoutModal.hidden = false;
+            document.body.classList.add("modal-open");
+            checkoutForm.hidden = false;
+            orderSuccess.hidden = true;
+            checkoutMessage.textContent = "";
+            document.querySelector("#customerName").focus();
+        }
+
+        function closeCheckoutModal() {
+            checkoutModal.hidden = true;
+            document.body.classList.remove("modal-open");
+        }
+
+        function renderCart() {
+            cartCount.textContent = getCartQuantity();
+            cartTotal.textContent = currencyFormatter.format(getCartTotal());
+            cartEmpty.hidden = cart.length > 0;
+            clearCart.disabled = cart.length === 0;
+            goCheckout.disabled = cart.length === 0;
+            confirmOrder.disabled = cart.length === 0;
+
+            cartItems.innerHTML = cart.map((item) => `
+                <article class="cart-item">
+                    <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}">
+                    <div class="cart-item-info">
+                        <h3>${escapeHTML(item.name)}</h3>
+                        <span>${escapeHTML(item.size)} • ${escapeHTML(item.profile)}</span>
+                        ${item.customizationDetails ? `<small>${escapeHTML(item.customizationDetails)}</small>` : ""}
+                        <strong>${currencyFormatter.format(item.price)}</strong>
+                    </div>
+                    <div class="quantity-control" aria-label="Quantidade de ${escapeHTML(item.name)}">
+                        <button type="button" data-action="decrease" data-id="${escapeHTML(item.id)}" aria-label="Diminuir ${escapeHTML(item.name)}">-</button>
+                        <span>${item.quantity}</span>
+                        <button type="button" data-action="increase" data-id="${escapeHTML(item.id)}" aria-label="Aumentar ${escapeHTML(item.name)}">+</button>
+                    </div>
+                    <button class="remove-item" type="button" data-action="remove" data-id="${escapeHTML(item.id)}">Remover</button>
+                </article>
+            `).join("");
+
+            renderCheckoutSummary();
+            saveCart();
+        }
+
+        function addToCart(drink) {
+            const existingItem = cart.find((item) => item.id === drink.id);
+            orderSuccess.hidden = true;
+            checkoutForm.hidden = false;
+            checkoutMessage.textContent = "";
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...drink, quantity: 1 });
+            }
+
+            renderCart();
+        }
+
+        function updateCartItem(id, action) {
+            const item = cart.find((cartItem) => cartItem.id === id);
+
+            if (!item) {
+                return;
+            }
+
+            if (action === "increase") {
+                item.quantity += 1;
+            }
+
+            if (action === "decrease") {
+                item.quantity -= 1;
+            }
+
+            if (action === "remove" || item.quantity <= 0) {
+                cart = cart.filter((cartItem) => cartItem.id !== id);
+            }
+
+            renderCart();
+        }
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                buttons.forEach((item) => item.classList.remove("is-active"));
+                button.classList.add("is-active");
+
+                mainCup.classList.add("is-changing");
+
+                setTimeout(() => {
+                    mainCup.src = button.dataset.image;
+                    mainCup.alt = `Copo Starbucks sabor ${button.dataset.name}`;
+                    drinkName.textContent = button.dataset.name;
+                    drinkDescription.textContent = button.dataset.description;
+                    selectedBaseDrink = getDrinkFromButton(button);
+                    updateOrderPreview();
+                    orderButton.textContent = "Adicionar pedido";
+                    root.style.setProperty("--accent", button.dataset.color);
+                    root.style.setProperty("--accent-soft", button.dataset.soft);
+                    mainCup.classList.remove("is-changing");
+                }, 180);
+            });
+        });
+
+        customizerForm.addEventListener("change", (event) => {
+            if (event.target.matches(".multi-options input[type='checkbox']")) {
+                const group = event.target.closest(".multi-options");
+                const emptyOption = group.querySelector("[data-empty-option='true']");
+                const selectedComplements = [...group.querySelectorAll("input[type='checkbox']:not([data-empty-option='true']):checked")];
+
+                if (event.target.dataset.emptyOption === "true" && event.target.checked) {
+                    selectedComplements.forEach((input) => {
+                        input.checked = false;
+                    });
+                }
+
+                if (event.target.dataset.emptyOption !== "true" && event.target.checked) {
+                    emptyOption.checked = false;
+                }
+
+                const hasAnyChecked = [...group.querySelectorAll("input[type='checkbox']:checked")].length > 0;
+
+                if (!hasAnyChecked) {
+                    emptyOption.checked = true;
+                }
+            }
+
+            updateOrderPreview();
+        });
+
+        orderButton.addEventListener("click", () => {
+            addToCart(selectedDrink);
+            orderButton.textContent = "Adicionado ao carrinho";
+            orderButton.classList.add("is-added");
+
+            setTimeout(() => {
+                orderButton.textContent = "Adicionar pedido";
+                orderButton.classList.remove("is-added");
+            }, 1800);
+        });
+
+        cartItems.addEventListener("click", (event) => {
+            const button = event.target.closest("button[data-action]");
+
+            if (!button) {
+                return;
+            }
+
+            updateCartItem(button.dataset.id, button.dataset.action);
+        });
+
+        openCart.addEventListener("click", openCartModal);
+        closeCart.addEventListener("click", closeCartModal);
+
+        cartModal.addEventListener("click", (event) => {
+            if (event.target === cartModal) {
+                closeCartModal();
+            }
+        });
+
+        clearCart.addEventListener("click", () => {
+            cart = [];
+            checkoutMessage.textContent = "";
+            renderCart();
+        });
+
+        goCheckout.addEventListener("click", () => {
+            if (cart.length === 0) {
+                checkoutMessage.textContent = "Adicione pelo menos uma bebida ao carrinho antes de finalizar.";
+                return;
+            }
+
+            openCheckoutModal();
+        });
+
+        closeCheckout.addEventListener("click", closeCheckoutModal);
+
+        checkoutModal.addEventListener("click", (event) => {
+            if (event.target === checkoutModal) {
+                closeCheckoutModal();
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && !cartModal.hidden) {
+                closeCartModal();
+            }
+
+            if (event.key === "Escape" && !checkoutModal.hidden) {
+                closeCheckoutModal();
+            }
+        });
+
+        checkoutForm.addEventListener("change", (event) => {
+            if (event.target.name === "deliveryType") {
+                const isDelivery = event.target.value === "Entrega";
+                addressFields.hidden = !isDelivery;
+                document.querySelector("#customerAddress").required = isDelivery;
+                document.querySelector("#customerNumber").required = isDelivery;
+            }
+        });
+
+        checkoutForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            if (cart.length === 0) {
+                checkoutMessage.textContent = "Seu carrinho está vazio. Adicione uma bebida para finalizar.";
+                return;
+            }
+
+            const customerName = document.querySelector("#customerName");
+            const customerPhone = document.querySelector("#customerPhone");
+            const deliveryType = checkoutForm.querySelector("input[name='deliveryType']:checked").value;
+            const payment = checkoutForm.querySelector("input[name='payment']:checked").value;
+            const address = document.querySelector("#customerAddress");
+            const number = document.querySelector("#customerNumber");
+            const complement = document.querySelector("#customerComplement");
+            const notes = document.querySelector("#orderNotes");
+
+            if (!customerName.value.trim() || !customerPhone.value.trim()) {
+                checkoutMessage.textContent = "Preencha nome e telefone para continuar.";
+                checkoutForm.reportValidity();
+                return;
+            }
+
+            if (deliveryType === "Entrega" && (!address.value.trim() || !number.value.trim())) {
+                checkoutMessage.textContent = "Para entrega, informe endereço e número.";
+                checkoutForm.reportValidity();
+                return;
+            }
+
+            const orderNumber = Math.floor(100000 + Math.random() * 900000);
+            const orderTotal = getCartTotal();
+            const order = {
+                number: orderNumber,
+                customer: customerName.value.trim(),
+                phone: customerPhone.value.trim(),
+                deliveryType,
+                address: deliveryType === "Entrega" ? `${address.value.trim()}, ${number.value.trim()} ${complement.value.trim()}`.trim() : "Retirada na loja",
+                payment,
+                notes: notes.value.trim(),
+                total: orderTotal,
+                items: cart,
+                createdAt: new Date().toISOString()
+            };
+
+            localStorage.setItem("starbucksLastOrder", JSON.stringify(order));
+            successOrderNumber.textContent = `Pedido #${orderNumber}`;
+            successOrderText.textContent = `${order.customer}, seu pedido de ${currencyFormatter.format(orderTotal)} foi confirmado para ${deliveryType.toLowerCase()} com pagamento em ${payment}.`;
+            checkoutForm.hidden = true;
+            orderSuccess.hidden = false;
+            checkoutMessage.textContent = "";
+            cart = [];
+            checkoutForm.reset();
+            addressFields.hidden = true;
+            document.querySelector("#customerAddress").required = false;
+            document.querySelector("#customerNumber").required = false;
+            renderCart();
+        });
+
+        updateOrderPreview();
+        renderCart();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "starbucks-ia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Projeto Starbucks feito com HTML, CSS e JavaScript.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "preview": "vite preview --host 127.0.0.1"
+  },
+  "devDependencies": {
+    "vite": "^7.1.0"
+  }
+}

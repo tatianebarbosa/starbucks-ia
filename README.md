@@ -24,6 +24,15 @@ Página interativa inspirada na Starbucks, feita para praticar HTML, CSS e JavaS
 
 Abra o arquivo `index.html` no navegador ou use a extensão Live Server no VS Code.
 
+Se preferir usar terminal:
+
+```bash
+npm install
+npm run dev
+```
+
+Depois abra o endereço mostrado no terminal.
+
 ## Estrutura
 
 - `index.html`: estrutura da página e lógica de interação

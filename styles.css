@@ -112,9 +112,8 @@ button {
 .nav-links {
     gap: 8px;
     padding: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.1);
+    background: transparent;
 }
 
 .nav-links a {

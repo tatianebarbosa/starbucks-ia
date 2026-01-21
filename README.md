@@ -4,6 +4,10 @@ Página interativa inspirada na Starbucks, feita para praticar HTML, CSS e JavaS
 
 > Projeto de estudo, sem vínculo oficial com a marca Starbucks.
 
+## Pré-visualização
+
+Acesse o site publicado: [Projeto Starbucks](https://tatianebarbosa.github.io/starbucks-ia/)
+
 ## Funcionalidades
 
 - Troca da bebida principal ao clicar nas miniaturas

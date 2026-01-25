@@ -189,13 +189,8 @@ button {
 }
 
 .eyebrow {
-    width: fit-content;
     margin-bottom: 18px;
-    padding: 8px 14px;
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.14);
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--cream);
     font-size: 12px;
     font-weight: 800;
     text-transform: uppercase;

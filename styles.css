@@ -1281,6 +1281,17 @@ h1 span {
     font-weight: 900;
 }
 
+.footer a {
+    color: var(--brand);
+    font-weight: 900;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.footer a:hover {
+    color: var(--cta);
+}
+
 @media (max-width: 900px) {
     body {
         overflow-x: hidden;

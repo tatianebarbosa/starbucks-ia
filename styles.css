@@ -24,6 +24,13 @@ html {
     scroll-behavior: smooth;
 }
 
+#conteudo,
+#bebidas,
+#personalizar,
+#experiencia {
+    scroll-margin-top: 92px;
+}
+
 body {
     min-height: 100vh;
     font-family: "Poppins", Arial, sans-serif;

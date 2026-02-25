@@ -26,6 +26,7 @@ html {
 
 #conteudo,
 #bebidas,
+#favoritos,
 #personalizar,
 #experiencia {
     scroll-margin-top: 92px;
@@ -444,6 +445,144 @@ h1 span {
     box-shadow: 0 18px 44px var(--accent-soft);
 }
 
+.spotlight-section {
+    margin: 0 0 18px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 16px;
+}
+
+.section-heading h2 {
+    max-width: 620px;
+    margin-top: 4px;
+    color: var(--ink);
+    font-size: clamp(26px, 3vw, 42px);
+    line-height: 1.08;
+}
+
+.section-heading > p {
+    max-width: 420px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.spotlight-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.spotlight-card {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 18px;
+    min-height: 236px;
+    padding: 18px;
+    border: 1px solid var(--light-line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 20px 54px rgba(23, 37, 31, 0.1);
+    backdrop-filter: blur(18px);
+}
+
+.spotlight-card img {
+    align-self: center;
+    width: 100%;
+    max-height: 190px;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 22px rgba(23, 37, 31, 0.16));
+}
+
+.spotlight-card-content {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.spotlight-badge {
+    width: fit-content;
+    padding: 5px 9px;
+    border-radius: 999px;
+    color: var(--brand);
+    background: rgba(0, 98, 65, 0.08);
+    font-size: 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.spotlight-card h3 {
+    margin-top: 10px;
+    color: var(--ink);
+    font-size: 22px;
+    line-height: 1.1;
+}
+
+.spotlight-card p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.spotlight-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.spotlight-tags span {
+    padding: 5px 8px;
+    border-radius: 999px;
+    color: var(--brand);
+    background: rgba(0, 98, 65, 0.08);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.spotlight-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.spotlight-card-footer strong {
+    color: var(--ink);
+    font-size: 20px;
+    line-height: 1;
+}
+
+.quick-add-button {
+    min-height: 42px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 999px;
+    color: var(--white);
+    background: var(--cta);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 900;
+    box-shadow: 0 12px 24px var(--cta-soft);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.quick-add-button:hover {
+    transform: translateY(-2px);
+}
+
+.quick-add-button.is-added {
+    opacity: 0.72;
+}
+
 .customizer-panel {
     margin: 0 0 18px;
     padding: 24px;
@@ -699,6 +838,95 @@ h1 span {
     opacity: 0.78;
 }
 
+.promo-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+    align-items: center;
+    gap: 22px;
+    margin: 0 0 18px;
+    padding: 24px;
+    border: 1px solid var(--light-line);
+    border-radius: 8px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(255, 239, 246, 0.84)),
+        rgba(255, 255, 255, 0.82);
+    box-shadow: 0 20px 54px rgba(23, 37, 31, 0.1);
+    backdrop-filter: blur(18px);
+}
+
+.promo-panel h2 {
+    max-width: 640px;
+    margin-top: 4px;
+    color: var(--ink);
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.12;
+}
+
+.promo-panel span {
+    display: block;
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.promo-panel span strong {
+    color: var(--cta);
+}
+
+.coupon-form {
+    display: grid;
+    gap: 8px;
+}
+
+.coupon-form label {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.coupon-control {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+}
+
+.coupon-control input {
+    min-width: 0;
+    min-height: 50px;
+    padding: 0 14px;
+    border: 1px solid var(--light-line);
+    border-radius: 8px;
+    color: var(--ink);
+    background: rgba(255, 255, 255, 0.8);
+    font: inherit;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.coupon-control button {
+    min-height: 50px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 999px;
+    color: var(--white);
+    background: var(--brand);
+    cursor: pointer;
+    font-weight: 900;
+    transition: transform 0.25s ease;
+}
+
+.coupon-control button:hover {
+    transform: translateY(-2px);
+}
+
+#couponMessage {
+    min-height: 22px;
+    color: var(--brand);
+    font-size: 13px;
+    font-weight: 800;
+}
+
 .cart-modal {
     position: fixed;
     inset: 0;
@@ -936,6 +1164,14 @@ h1 span {
 .cart-total strong {
     font-size: clamp(26px, 4vw, 40px);
     line-height: 1;
+}
+
+.cart-total small {
+    display: block;
+    margin-top: 6px;
+    color: var(--cta);
+    font-size: 13px;
+    font-weight: 900;
 }
 
 .checkout-button,
@@ -1312,8 +1548,10 @@ h1 span {
     .topbar,
     .hero,
     .experience,
+    .spotlight-grid,
     .customizer-form,
     .order-panel,
+    .promo-panel,
     .order-summary,
     .cart-header,
     .checkout-header,
@@ -1340,6 +1578,15 @@ h1 span {
         min-height: auto;
         gap: 20px;
         padding-top: 34px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .spotlight-card {
+        grid-template-columns: 110px minmax(0, 1fr);
     }
 
     .hero-product {
@@ -1457,9 +1704,29 @@ h1 span {
 
     .size-options,
     .extras-options,
+    .coupon-control,
     .checkout-options,
     .payment-options {
         grid-template-columns: 1fr;
+    }
+
+    .spotlight-card {
+        grid-template-columns: 1fr;
+    }
+
+    .spotlight-card img {
+        justify-self: center;
+        max-width: 180px;
+    }
+
+    .spotlight-card-footer {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .quick-add-button,
+    .coupon-control button {
+        width: 100%;
     }
 
     .cart-total,

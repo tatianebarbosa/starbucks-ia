@@ -11,8 +11,11 @@ Acesse o site publicado: [Projeto Starbucks](https://tatianebarbosa.github.io/st
 ## Funcionalidades
 
 - Troca da bebida principal ao clicar nas miniaturas
+- Vitrine de favoritos da semana com pedidos prontos
+- Botões de adicionar rápido ao carrinho
 - Personalização por tamanho, leite, caldas, toppings e extras
 - Cálculo automático do subtotal
+- Cupom `TATI10` com 10% de desconto no carrinho
 - Carrinho com quantidade, remoção de itens e total
 - Finalização com dados do cliente, forma de retirada/entrega e pagamento
 - Persistência do carrinho no navegador com `localStorage`
@@ -36,6 +39,12 @@ npm run dev
 ```
 
 Depois abra o endereço mostrado no terminal.
+
+Para gerar uma versão de produção:
+
+```bash
+npm run build
+```
 
 ## Estrutura
 

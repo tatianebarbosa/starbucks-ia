@@ -27,6 +27,7 @@
 
             <nav class="nav-links" aria-label="Menu principal">
                 <a href="#conteudo">Início</a>
+                <a href="#favoritos">Favoritos</a>
                 <a href="#personalizar">Personalizar</a>
                 <a href="#experiencia">Experiência</a>
             </nav>
@@ -47,7 +48,7 @@
                 </p>
 
                 <div class="hero-actions" id="pedido">
-                    <a class="button-primary" href="#bebidas">Ver bebidas</a>
+                    <a class="button-primary" href="#favoritos">Ver bebidas</a>
                     <a class="button-secondary" href="#personalizar">Personalizar pedido</a>
                 </div>
 
@@ -112,6 +113,90 @@
                 aria-label="Selecionar Caramelo Gelado">
                 <img src="img/thumb3.png" alt="">
             </button>
+        </section>
+
+        <section class="spotlight-section" id="favoritos" aria-labelledby="spotlight-title">
+            <div class="section-heading">
+                <div>
+                    <p class="section-kicker">favoritos da semana</p>
+                    <h2 id="spotlight-title">Pedidos prontos para adicionar em um clique.</h2>
+                </div>
+                <p>Escolhi combinações com estilos diferentes para deixar a página com cara de loja completa.</p>
+            </div>
+
+            <div class="spotlight-grid">
+                <article class="spotlight-card">
+                    <img src="img/img1.png" alt="Bebida Clássico Verde com chantilly">
+                    <div class="spotlight-card-content">
+                        <span class="spotlight-badge">mais pedido</span>
+                        <h3>Pausa Verde</h3>
+                        <p>Clássico Verde grande com chantilly, canela e final cremoso.</p>
+                        <div class="spotlight-tags" aria-label="Detalhes do Pausa Verde">
+                            <span>Grande</span>
+                            <span>Leve</span>
+                            <span>Chantilly</span>
+                        </div>
+                        <div class="spotlight-card-footer">
+                            <strong>R$ 21,40</strong>
+                            <button class="quick-add-button" type="button" data-name="Pausa Verde"
+                                data-size="Grande" data-profile="Leve" data-price-value="21.4"
+                                data-image="img/img1.png"
+                                data-summary="Grande • Integral • Chantilly • Canela"
+                                data-details="Tamanho Grande • Leite Integral • Sem calda • Sem topping • Chantilly • Canela">
+                                Adicionar rápido
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="spotlight-card">
+                    <img src="img/img2.png" alt="Bebida Creme de Frutas gelada">
+                    <div class="spotlight-card-content">
+                        <span class="spotlight-badge">doce gelado</span>
+                        <h3>Berry Pink</h3>
+                        <p>Creme de Frutas com leite de aveia, baunilha e granulado.</p>
+                        <div class="spotlight-tags" aria-label="Detalhes do Berry Pink">
+                            <span>Pequeno</span>
+                            <span>Doce</span>
+                            <span>Aveia</span>
+                        </div>
+                        <div class="spotlight-card-footer">
+                            <strong>R$ 26,00</strong>
+                            <button class="quick-add-button" type="button" data-name="Berry Pink"
+                                data-size="Pequeno" data-profile="Doce" data-price-value="26"
+                                data-image="img/img2.png"
+                                data-summary="Pequeno • Aveia • Baunilha • Granulado"
+                                data-details="Tamanho Pequeno • Leite Aveia • Baunilha • Granulado">
+                                Adicionar rápido
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="spotlight-card">
+                    <img src="img/img3.png" alt="Bebida Caramelo Gelado intensa">
+                    <div class="spotlight-card-content">
+                        <span class="spotlight-badge">energia extra</span>
+                        <h3>Caramelo Power</h3>
+                        <p>Caramelo Gelado extra com espresso duplo e caramelo crocante.</p>
+                        <div class="spotlight-tags" aria-label="Detalhes do Caramelo Power">
+                            <span>Extra</span>
+                            <span>Intenso</span>
+                            <span>Espresso</span>
+                        </div>
+                        <div class="spotlight-card-footer">
+                            <strong>R$ 32,40</strong>
+                            <button class="quick-add-button" type="button" data-name="Caramelo Power"
+                                data-size="Extra" data-profile="Intenso" data-price-value="32.4"
+                                data-image="img/img3.png"
+                                data-summary="Extra • Integral • Caramelo • Espresso extra"
+                                data-details="Tamanho Extra • Leite Integral • Caramelo • Caramelo crocante • Espresso extra">
+                                Adicionar rápido
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <section class="customizer-panel" id="personalizar" aria-labelledby="customizer-title">
@@ -254,6 +339,23 @@
             </div>
         </section>
 
+        <section class="promo-panel" aria-labelledby="promo-title">
+            <div>
+                <p class="section-kicker">cupom da semana</p>
+                <h2 id="promo-title">Ganhe 10% de desconto no carrinho.</h2>
+                <span>Use o cupom <strong>TATI10</strong> para testar a experiência completa.</span>
+            </div>
+
+            <form class="coupon-form" id="couponForm">
+                <label for="couponCode">Cupom</label>
+                <div class="coupon-control">
+                    <input type="text" id="couponCode" name="couponCode" placeholder="Digite TATI10">
+                    <button type="submit">Aplicar</button>
+                </div>
+                <p id="couponMessage" role="status"></p>
+            </form>
+        </section>
+
         <div class="cart-modal" id="cartModal" hidden>
         <section class="cart-panel" id="carrinho" role="dialog" aria-modal="true" aria-labelledby="cart-title">
             <button class="close-cart" type="button" id="closeCart" aria-label="Fechar carrinho">×</button>
@@ -277,6 +379,7 @@
                 <div>
                     <span>Total</span>
                     <strong id="cartTotal">R$ 0,00</strong>
+                    <small id="cartDiscount" hidden></small>
                 </div>
                 <button class="checkout-button" type="button" id="goCheckout">Finalizar compra</button>
             </div>
@@ -441,14 +544,24 @@
         const orderSuccess = document.querySelector("#orderSuccess");
         const successOrderNumber = document.querySelector("#successOrderNumber");
         const successOrderText = document.querySelector("#successOrderText");
+        const quickAddButtons = document.querySelectorAll(".quick-add-button");
+        const couponForm = document.querySelector("#couponForm");
+        const couponCode = document.querySelector("#couponCode");
+        const couponMessage = document.querySelector("#couponMessage");
+        const cartDiscount = document.querySelector("#cartDiscount");
         const root = document.documentElement;
         const currencyFormatter = new Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL"
         });
+        const coupon = {
+            code: "TATI10",
+            discount: 0.1
+        };
         let selectedBaseDrink = getDrinkFromButton(document.querySelector(".thumb-button.is-active"));
         let selectedDrink;
         let cart = loadCart();
+        let activeCoupon = loadCoupon();
 
         function loadCart() {
             try {
@@ -458,6 +571,10 @@
             } catch {
                 return [];
             }
+        }
+
+        function loadCoupon() {
+            return localStorage.getItem("starbucksCoupon") === coupon.code ? coupon : null;
         }
 
         function escapeHTML(value) {
@@ -581,12 +698,29 @@
             localStorage.setItem("starbucksCart", JSON.stringify(cart));
         }
 
+        function saveCoupon() {
+            if (activeCoupon) {
+                localStorage.setItem("starbucksCoupon", activeCoupon.code);
+                return;
+            }
+
+            localStorage.removeItem("starbucksCoupon");
+        }
+
         function getCartQuantity() {
             return cart.reduce((total, item) => total + item.quantity, 0);
         }
 
-        function getCartTotal() {
+        function getCartSubtotal() {
             return cart.reduce((total, item) => total + item.price * item.quantity, 0);
+        }
+
+        function getCartDiscount() {
+            return activeCoupon && cart.length ? getCartSubtotal() * activeCoupon.discount : 0;
+        }
+
+        function getCartTotal() {
+            return Math.max(0, getCartSubtotal() - getCartDiscount());
         }
 
         function getCartItemsLabel() {
@@ -629,8 +763,11 @@
         }
 
         function renderCart() {
+            const discount = getCartDiscount();
             cartCount.textContent = getCartQuantity();
             cartTotal.textContent = currencyFormatter.format(getCartTotal());
+            cartDiscount.hidden = discount <= 0;
+            cartDiscount.textContent = discount > 0 ? `Cupom ${activeCoupon.code}: -${currencyFormatter.format(discount)}` : "";
             cartEmpty.hidden = cart.length > 0;
             clearCart.disabled = cart.length === 0;
             goCheckout.disabled = cart.length === 0;
@@ -673,6 +810,19 @@
             renderCart();
         }
 
+        function buildQuickDrink(button) {
+            return {
+                id: `favorito|${button.dataset.name}`,
+                name: button.dataset.name,
+                size: button.dataset.size,
+                profile: button.dataset.profile,
+                price: Number(button.dataset.priceValue),
+                image: button.dataset.image,
+                customizationSummary: button.dataset.summary,
+                customizationDetails: button.dataset.details
+            };
+        }
+
         function updateCartItem(id, action) {
             const item = cart.find((cartItem) => cartItem.id === id);
 
@@ -694,6 +844,44 @@
 
             renderCart();
         }
+
+        quickAddButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                addToCart(buildQuickDrink(button));
+                button.textContent = "Adicionado";
+                button.classList.add("is-added");
+
+                setTimeout(() => {
+                    button.textContent = "Adicionar rápido";
+                    button.classList.remove("is-added");
+                }, 1600);
+            });
+        });
+
+        couponForm.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const typedCoupon = couponCode.value.trim().toUpperCase();
+
+            if (!typedCoupon) {
+                activeCoupon = null;
+                saveCoupon();
+                couponMessage.textContent = "Cupom removido.";
+                renderCart();
+                return;
+            }
+
+            if (typedCoupon === coupon.code) {
+                activeCoupon = coupon;
+                saveCoupon();
+                couponCode.value = coupon.code;
+                couponMessage.textContent = "Cupom TATI10 aplicado: 10% de desconto.";
+                renderCart();
+                return;
+            }
+
+            couponMessage.textContent = "Cupom inválido. Tente TATI10.";
+        });
 
         buttons.forEach((button) => {
             button.addEventListener("click", () => {
@@ -854,6 +1042,8 @@
                 address: deliveryType === "Entrega" ? `${address.value.trim()}, ${number.value.trim()} ${complement.value.trim()}`.trim() : "Retirada na loja",
                 payment,
                 notes: notes.value.trim(),
+                coupon: activeCoupon ? activeCoupon.code : null,
+                discount: getCartDiscount(),
                 total: orderTotal,
                 items: cart,
                 createdAt: new Date().toISOString()
@@ -872,6 +1062,11 @@
             document.querySelector("#customerNumber").required = false;
             renderCart();
         });
+
+        if (activeCoupon) {
+            couponCode.value = activeCoupon.code;
+            couponMessage.textContent = "Cupom TATI10 aplicado: 10% de desconto.";
+        }
 
         updateOrderPreview();
         renderCart();

@@ -82,7 +82,7 @@ button {
 }
 
 .page-shell {
-    width: min(1360px, calc(100% - 64px));
+    width: min(1640px, calc(100% - 96px));
     min-height: 100vh;
     margin: 0 auto;
     padding: 34px 0 72px;
@@ -98,7 +98,7 @@ button {
     gap: 24px;
     width: 100vw;
     margin: -34px calc(50% - 50vw) 56px;
-    padding: 12px max(24px, calc((100vw - 1280px) / 2));
+    padding: 12px max(48px, calc((100vw - 1640px) / 2));
     border: 0;
     border-bottom: 1px solid rgba(0, 98, 65, 0.12);
     border-radius: 0;
@@ -186,9 +186,9 @@ button {
 
 .hero {
     display: grid;
-    grid-template-columns: minmax(0, 0.92fr) minmax(430px, 1.08fr);
+    grid-template-columns: minmax(0, 0.9fr) minmax(520px, 1.1fr);
     align-items: center;
-    gap: 64px;
+    gap: 88px;
     min-height: 650px;
     padding: 42px 0 66px;
 }
@@ -452,7 +452,7 @@ h1 span {
 .journey-steps {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 18px;
+    gap: 28px;
 }
 
 .journey-steps article {
@@ -522,13 +522,13 @@ h1 span {
 .spotlight-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    gap: 30px;
 }
 
 .spotlight-card {
     display: grid;
-    grid-template-columns: 150px minmax(0, 1fr);
-    gap: 24px;
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 30px;
     min-height: 300px;
     padding: 26px;
     border: 1px solid var(--light-line);
@@ -686,7 +686,7 @@ h1 span {
 .customizer-form {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 24px;
+    gap: 30px;
 }
 
 .customizer-group {
@@ -895,7 +895,7 @@ h1 span {
 
 .promo-panel {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, 420px);
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 500px);
     align-items: center;
     gap: 36px;
     margin: 0 0 96px;
@@ -1522,7 +1522,7 @@ h1 span {
 .experience-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    gap: 30px;
 }
 
 .experience article {

@@ -504,6 +504,10 @@ h1 span {
     margin-bottom: 30px;
 }
 
+.section-heading > div {
+    max-width: 760px;
+}
+
 .section-heading h2 {
     max-width: 620px;
     margin-top: 4px;

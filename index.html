@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página interativa inspirada em cafeteria, com vitrine de bebidas, personalização e carrinho.">
+    <meta name="description" content="Cardápio interativo inspirado em cafeteria, com bebidas personalizadas, carrinho e pedido online.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,7 +20,7 @@
 
     <div class="page-shell">
         <header class="topbar" aria-label="Navegação principal">
-            <a class="brand" href="#conteudo" aria-label="Início do projeto Starbucks">
+            <a class="brand" href="#conteudo" aria-label="Início Starbucks">
                 <img src="img/logo.png" alt="Starbucks" class="logo">
                 <span>Starbucks</span>
             </a>
@@ -29,7 +29,7 @@
                 <a href="#conteudo">Início</a>
                 <a href="#favoritos">Favoritos</a>
                 <a href="#personalizar">Personalizar</a>
-                <a href="#experiencia">Experiência</a>
+                <a href="#experiencia">Pausa</a>
             </nav>
 
             <button class="cart-shortcut" type="button" id="openCart" aria-label="Ver carrinho">
@@ -119,7 +119,7 @@
             <div class="section-heading">
                 <div>
                     <p class="section-kicker">como pedir</p>
-                    <h2 id="journey-title">Uma experiência pensada para ser simples.</h2>
+                    <h2 id="journey-title">Seu pedido em poucos passos.</h2>
                 </div>
             </div>
 
@@ -174,7 +174,7 @@
                                 data-image="img/img1.png"
                                 data-summary="Grande • Integral • Chantilly • Canela"
                                 data-details="Tamanho Grande • Leite Integral • Sem calda • Sem topping • Chantilly • Canela">
-                                Adicionar rápido
+                                Quero esse
                             </button>
                         </div>
                     </div>
@@ -198,7 +198,7 @@
                                 data-image="img/img2.png"
                                 data-summary="Pequeno • Aveia • Baunilha • Granulado"
                                 data-details="Tamanho Pequeno • Leite Aveia • Baunilha • Granulado">
-                                Adicionar rápido
+                                Quero esse
                             </button>
                         </div>
                     </div>
@@ -222,7 +222,7 @@
                                 data-image="img/img3.png"
                                 data-summary="Extra • Integral • Caramelo • Espresso extra"
                                 data-details="Tamanho Extra • Leite Integral • Caramelo • Caramelo crocante • Espresso extra">
-                                Adicionar rápido
+                                Quero esse
                             </button>
                         </div>
                     </div>
@@ -235,7 +235,7 @@
                 <div>
                     <p class="section-kicker">personalização</p>
                     <h2 id="customizer-title">Monte sua bebida do seu jeito.</h2>
-                    <p class="customizer-note">Cada escolha atualiza o preço e o resumo do pedido em tempo real.</p>
+                    <p class="customizer-note">O valor aparece na hora para você escolher com calma.</p>
                 </div>
                 <div class="customizer-total">
                     <span>Subtotal</span>
@@ -375,7 +375,7 @@
             <div>
                 <p class="section-kicker">cupom da semana</p>
                 <h2 id="promo-title">Ganhe 10% de desconto no carrinho.</h2>
-                <span>Use o cupom <strong>TATI10</strong> para testar a experiência completa.</span>
+                <span>Use o cupom <strong>TATI10</strong> e deixe sua pausa ainda melhor.</span>
             </div>
 
             <form class="coupon-form" id="couponForm">
@@ -513,7 +513,7 @@
         </section>
         </div>
 
-        <section class="experience" id="experiencia" aria-label="Experiência Starbucks">
+        <section class="experience" id="experiencia" aria-label="Pausa Starbucks">
             <div class="section-heading">
                 <div>
                     <p class="section-kicker">feito para sua pausa</p>
@@ -541,9 +541,9 @@
         </section>
 
         <footer class="footer">
-            <span>Projeto Starbucks</span>
+            <span>Starbucks</span>
             <p>
-                HTML, CSS e JavaScript • Desenvolvido por
+                Bebidas personalizadas • Criado por
                 <a href="https://github.com/tatianebarbosa" target="_blank" rel="noopener noreferrer">
                     Tatiane Barbosa
                 </a>
@@ -893,7 +893,7 @@
                 button.classList.add("is-added");
 
                 setTimeout(() => {
-                    button.textContent = "Adicionar rápido";
+                    button.textContent = "Quero esse";
                     button.classList.remove("is-added");
                 }, 1600);
             });

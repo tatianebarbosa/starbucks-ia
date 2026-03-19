@@ -371,23 +371,6 @@
             </div>
         </section>
 
-        <section class="promo-panel" aria-labelledby="promo-title">
-            <div>
-                <p class="section-kicker">cupom da semana</p>
-                <h2 id="promo-title">Ganhe 10% de desconto no carrinho.</h2>
-                <span>Use o cupom <strong>TATI10</strong> e deixe sua pausa ainda melhor.</span>
-            </div>
-
-            <form class="coupon-form" id="couponForm">
-                <label for="couponCode">Cupom</label>
-                <div class="coupon-control">
-                    <input type="text" id="couponCode" name="couponCode" placeholder="Digite TATI10">
-                    <button type="submit">Aplicar</button>
-                </div>
-                <p id="couponMessage" role="status"></p>
-            </form>
-        </section>
-
         <div class="cart-modal" id="cartModal" hidden>
         <section class="cart-panel" id="carrinho" role="dialog" aria-modal="true" aria-labelledby="cart-title">
             <button class="close-cart" type="button" id="closeCart" aria-label="Fechar carrinho">×</button>
@@ -406,6 +389,15 @@
             </div>
 
             <div class="cart-items" id="cartItems" aria-live="polite"></div>
+
+            <form class="coupon-form cart-coupon" id="couponForm">
+                <label for="couponCode">Cupom</label>
+                <div class="coupon-control">
+                    <input type="text" id="couponCode" name="couponCode" placeholder="Digite TATI10">
+                    <button type="submit">Aplicar</button>
+                </div>
+                <p id="couponMessage" role="status"></p>
+            </form>
 
             <div class="cart-total">
                 <div>

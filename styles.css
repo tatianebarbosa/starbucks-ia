@@ -897,44 +897,18 @@ h1 span {
     opacity: 0.78;
 }
 
-.promo-panel {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(360px, 500px);
-    align-items: center;
-    gap: 36px;
-    margin: 0 0 96px;
-    padding: 36px;
-    border: 1px solid var(--light-line);
-    border-radius: 8px;
-    background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.84), rgba(255, 239, 246, 0.84)),
-        rgba(255, 255, 255, 0.82);
-    box-shadow: 0 20px 54px rgba(23, 37, 31, 0.1);
-    backdrop-filter: blur(18px);
-}
-
-.promo-panel h2 {
-    max-width: 640px;
-    margin-top: 4px;
-    color: var(--ink);
-    font-size: clamp(24px, 3vw, 36px);
-    line-height: 1.12;
-}
-
-.promo-panel span {
-    display: block;
-    margin-top: 10px;
-    color: var(--muted);
-    font-size: 14px;
-}
-
-.promo-panel span strong {
-    color: var(--cta);
-}
-
 .coupon-form {
     display: grid;
     gap: 8px;
+}
+
+.cart-coupon {
+    max-width: 520px;
+    margin-top: 16px;
+    padding: 16px;
+    border: 1px solid var(--light-line);
+    border-radius: 8px;
+    background: rgba(0, 98, 65, 0.06);
 }
 
 .coupon-form label {
@@ -1614,7 +1588,6 @@ h1 span {
     .spotlight-grid,
     .customizer-form,
     .order-panel,
-    .promo-panel,
     .order-summary,
     .cart-header,
     .checkout-header,

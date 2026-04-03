@@ -1,9 +1,9 @@
 :root {
     --brand: #006241;
-    --accent: #8ca777;
-    --accent-soft: rgba(140, 167, 119, 0.28);
-    --cta: #d75287;
-    --cta-soft: rgba(215, 82, 135, 0.28);
+    --accent: #006241;
+    --accent-soft: rgba(0, 98, 65, 0.3);
+    --cta: #006241;
+    --cta-soft: rgba(0, 98, 65, 0.3);
     --ink: #17251f;
     --muted: #61716a;
     --surface: rgba(255, 255, 255, 0.86);

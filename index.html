@@ -92,8 +92,8 @@
         </main>
 
         <section class="drink-picker" id="bebidas" aria-label="Escolha uma bebida">
-            <button class="thumb-button is-active" type="button" data-image="img/img1.png" data-color="#7d8b62"
-                data-soft="rgba(125, 139, 98, 0.34)"
+            <button class="thumb-button is-active" type="button" data-image="img/img1.png" data-color="#006241"
+                data-soft="rgba(0, 98, 65, 0.3)"
                 data-name="Clássico Verde" data-description="Café cremoso, final leve e energia para começar bem."
                 data-size="Grande" data-profile="Leve" data-price="R$ 18,90" data-price-value="18.9"
                 aria-label="Selecionar Clássico Verde">
@@ -106,8 +106,8 @@
                 aria-label="Selecionar Creme de Frutas">
                 <img src="img/thumb2.png" alt="">
             </button>
-            <button class="thumb-button" type="button" data-image="img/img3.png" data-color="#c77d32"
-                data-soft="rgba(199, 125, 50, 0.48)"
+            <button class="thumb-button" type="button" data-image="img/img3.png" data-color="#00a7c8"
+                data-soft="rgba(0, 167, 200, 0.42)"
                 data-name="Caramelo Gelado" data-description="Caramelo aveludado, café equilibrado e aroma envolvente."
                 data-size="Extra" data-profile="Intenso" data-price="R$ 23,90" data-price-value="23.9"
                 aria-label="Selecionar Caramelo Gelado">
@@ -591,7 +591,18 @@
             code: "TATI10",
             discount: 0.1
         };
-        let selectedBaseDrink = getDrinkFromButton(document.querySelector(".thumb-button.is-active"));
+
+        function updateDrinkTheme(button) {
+            root.style.setProperty("--accent", button.dataset.color);
+            root.style.setProperty("--accent-soft", button.dataset.soft);
+            root.style.setProperty("--cta", button.dataset.color);
+            root.style.setProperty("--cta-soft", button.dataset.soft);
+        }
+
+        const activeDrinkButton = document.querySelector(".thumb-button.is-active");
+        updateDrinkTheme(activeDrinkButton);
+
+        let selectedBaseDrink = getDrinkFromButton(activeDrinkButton);
         let selectedDrink;
         let cart = loadCart();
         let activeCoupon = loadCoupon();
@@ -920,6 +931,7 @@
             button.addEventListener("click", () => {
                 buttons.forEach((item) => item.classList.remove("is-active"));
                 button.classList.add("is-active");
+                updateDrinkTheme(button);
 
                 mainCup.classList.add("is-changing");
 
@@ -930,9 +942,7 @@
                     drinkDescription.textContent = button.dataset.description;
                     selectedBaseDrink = getDrinkFromButton(button);
                     updateOrderPreview();
-                    orderButton.textContent = "Adicionar pedido";
-                    root.style.setProperty("--accent", button.dataset.color);
-                    root.style.setProperty("--accent-soft", button.dataset.soft);
+                    orderButton.textContent = "Adicionar ao carrinho";
                     mainCup.classList.remove("is-changing");
                 }, 180);
             });

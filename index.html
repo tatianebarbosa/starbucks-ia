@@ -172,6 +172,8 @@
                             <button class="quick-add-button" type="button" data-name="Verde Cremoso"
                                 data-size="Grande" data-profile="Leve" data-price-value="21.4"
                                 data-image="img/img1.png"
+                                data-milk="Integral" data-syrups="Sem calda" data-toppings="Sem topping"
+                                data-extras="Chantilly|Canela"
                                 data-summary="Grande • Integral • Chantilly • Canela"
                                 data-details="Tamanho Grande • Leite Integral • Sem calda • Sem topping • Chantilly • Canela">
                                 Quero esse
@@ -196,6 +198,8 @@
                             <button class="quick-add-button" type="button" data-name="Berry Pink"
                                 data-size="Pequeno" data-profile="Doce" data-price-value="26"
                                 data-image="img/img2.png"
+                                data-milk="Aveia" data-syrups="Baunilha" data-toppings="Granulado"
+                                data-extras=""
                                 data-summary="Pequeno • Aveia • Baunilha • Granulado"
                                 data-details="Tamanho Pequeno • Leite Aveia • Baunilha • Granulado">
                                 Quero esse
@@ -220,6 +224,8 @@
                             <button class="quick-add-button" type="button" data-name="Caramelo Power"
                                 data-size="Extra" data-profile="Intenso" data-price-value="32.4"
                                 data-image="img/img3.png"
+                                data-milk="Integral" data-syrups="Caramelo" data-toppings="Caramelo crocante"
+                                data-extras="Espresso extra"
                                 data-summary="Extra • Integral • Caramelo • Espresso extra"
                                 data-details="Tamanho Extra • Leite Integral • Caramelo • Caramelo crocante • Espresso extra">
                                 Quero esse
@@ -738,6 +744,45 @@
             customizerTotal.textContent = currencyFormatter.format(selectedDrink.price);
         }
 
+        function getDataList(value) {
+            return (value || "").split("|").map((item) => item.trim()).filter(Boolean);
+        }
+
+        function setRadioValue(name, value) {
+            const input = customizerForm.querySelector(`input[name="${name}"][value="${value}"]`);
+
+            if (input) {
+                input.checked = true;
+            }
+        }
+
+        function setCheckboxValues(name, values) {
+            const inputs = [...customizerForm.querySelectorAll(`input[name="${name}"]`)];
+            inputs.forEach((input) => {
+                input.checked = values.includes(input.value);
+            });
+        }
+
+        function applyFavoritePreset(button) {
+            setRadioValue("size", button.dataset.size);
+            setRadioValue("milk", button.dataset.milk);
+            setCheckboxValues("syrup", getDataList(button.dataset.syrups));
+            setCheckboxValues("topping", getDataList(button.dataset.toppings));
+            setCheckboxValues("extra", getDataList(button.dataset.extras));
+        }
+
+        function selectBaseDrink(button) {
+            buttons.forEach((item) => item.classList.remove("is-active"));
+            button.classList.add("is-active");
+            updateDrinkTheme(button);
+
+            mainCup.src = button.dataset.image;
+            mainCup.alt = `Copo Starbucks sabor ${button.dataset.name}`;
+            drinkName.textContent = button.dataset.name;
+            drinkDescription.textContent = button.dataset.description;
+            selectedBaseDrink = getDrinkFromButton(button);
+        }
+
         function saveCart() {
             localStorage.setItem("starbucksCart", JSON.stringify(cart));
         }
@@ -854,19 +899,6 @@
             renderCart();
         }
 
-        function buildQuickDrink(button) {
-            return {
-                id: `favorito|${button.dataset.name}`,
-                name: button.dataset.name,
-                size: button.dataset.size,
-                profile: button.dataset.profile,
-                price: Number(button.dataset.priceValue),
-                image: button.dataset.image,
-                customizationSummary: button.dataset.summary,
-                customizationDetails: button.dataset.details
-            };
-        }
-
         function updateCartItem(id, action) {
             const item = cart.find((cartItem) => cartItem.id === id);
 
@@ -891,14 +923,20 @@
 
         quickAddButtons.forEach((button) => {
             button.addEventListener("click", () => {
-                addToCart(buildQuickDrink(button));
-                button.textContent = "Adicionado";
-                button.classList.add("is-added");
+                const matchingDrinkButton = [...buttons].find((item) => item.dataset.image === button.dataset.image);
 
-                setTimeout(() => {
-                    button.textContent = "Quero esse";
-                    button.classList.remove("is-added");
-                }, 1600);
+                if (!matchingDrinkButton) {
+                    return;
+                }
+
+                selectBaseDrink(matchingDrinkButton);
+                applyFavoritePreset(button);
+                updateOrderPreview();
+                orderButton.textContent = "Adicionar ao carrinho";
+                document.querySelector("#personalizar").scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
             });
         });
 

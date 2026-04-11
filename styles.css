@@ -27,8 +27,7 @@ html {
 #conteudo,
 #bebidas,
 #favoritos,
-#personalizar,
-#experiencia {
+#personalizar {
     scroll-margin-top: 92px;
 }
 
@@ -1492,54 +1491,6 @@ h1 span {
     line-height: 1.6;
 }
 
-.experience {
-    padding-top: 8px;
-}
-
-.experience-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 30px;
-}
-
-.experience article {
-    min-height: 230px;
-    padding: 32px;
-    border-radius: 8px;
-    transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.experience article:hover {
-    transform: translateY(-6px);
-    border-color: var(--brand);
-}
-
-.experience span {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    color: var(--white);
-    background: var(--brand);
-    font-size: 13px;
-    font-weight: 900;
-}
-
-.experience h3 {
-    margin-top: 28px;
-    color: var(--ink);
-    font-size: 20px;
-}
-
-.experience p {
-    margin-top: 12px;
-    color: var(--muted);
-    font-size: 14px;
-    line-height: 1.65;
-}
-
 .footer {
     display: flex;
     align-items: center;
@@ -1582,7 +1533,6 @@ h1 span {
 
     .topbar,
     .hero,
-    .experience-grid,
     .journey-steps,
     .spotlight-grid,
     .customizer-form,

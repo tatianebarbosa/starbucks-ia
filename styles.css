@@ -12,6 +12,13 @@
     --white: #ffffff;
     --line: rgba(0, 98, 65, 0.14);
     --light-line: rgba(23, 37, 31, 0.12);
+    --button-height: 48px;
+    --button-icon-size: 48px;
+    --button-min-width: 148px;
+    --button-padding-x: 18px;
+    --button-radius: 10px;
+    --button-font-size: 14px;
+    --button-icon-font-size: 22px;
 }
 
 * {
@@ -155,16 +162,28 @@ button {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    min-height: 42px;
-    padding: 0 14px;
+    min-width: 0;
+    min-height: var(--button-height);
+    padding: 0 12px;
     border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 999px;
+    border-radius: var(--button-radius);
     color: var(--white);
     background: var(--cta);
-    font-size: 14px;
+    font-size: var(--button-font-size);
     font-weight: 900;
+    white-space: nowrap;
     box-shadow: 0 12px 28px var(--cta-soft);
     transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.cart-icon {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .cart-shortcut:hover {

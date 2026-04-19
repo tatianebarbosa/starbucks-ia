@@ -355,41 +355,41 @@
                     </div>
                 </fieldset>
             </form>
-        </section>
 
-        <section class="order-panel" aria-labelledby="order-title">
-            <div>
-                <p class="section-kicker">pedido rápido</p>
-                <h2 id="order-title">Revise antes de colocar no carrinho.</h2>
-            </div>
+            <section class="order-panel" aria-labelledby="order-title">
+                <div>
+                    <h2 id="order-title">Resumo do pedido</h2>
+                </div>
 
-            <div class="order-summary">
-                <div>
-                    <span>Bebida selecionada</span>
-                    <strong id="orderName">Clássico Verde</strong>
+                <div class="order-summary">
+                    <div>
+                        <span>Bebida selecionada</span>
+                        <strong id="orderName">Clássico Verde</strong>
+                    </div>
+                    <div>
+                        <span>Personalização</span>
+                        <strong id="orderOptions">Grande • Integral</strong>
+                    </div>
+                    <div>
+                        <span>Valor</span>
+                        <strong id="orderPrice">R$ 18,90</strong>
+                    </div>
+                    <button class="order-button" type="button" id="orderButton">Adicionar ao carrinho</button>
                 </div>
-                <div>
-                    <span>Personalização</span>
-                    <strong id="orderOptions">Grande • Integral</strong>
-                </div>
-                <div>
-                    <span>Valor</span>
-                    <strong id="orderPrice">R$ 18,90</strong>
-                </div>
-                <button class="order-button" type="button" id="orderButton">Adicionar pedido</button>
-            </div>
+            </section>
         </section>
 
         <div class="cart-modal" id="cartModal" hidden>
         <section class="cart-panel" id="carrinho" role="dialog" aria-modal="true" aria-labelledby="cart-title">
-            <button class="close-cart" type="button" id="closeCart" aria-label="Fechar carrinho">×</button>
-
             <div class="cart-header">
                 <div>
                     <p class="section-kicker">seu carrinho</p>
                     <h2 id="cart-title">Pedidos adicionados</h2>
                 </div>
-                <button class="clear-cart" type="button" id="clearCart">Limpar carrinho</button>
+                <div class="cart-actions">
+                    <button class="clear-cart" type="button" id="clearCart">Limpar carrinho</button>
+                    <button class="close-cart" type="button" id="closeCart" aria-label="Fechar carrinho">×</button>
+                </div>
             </div>
 
             <div class="cart-empty" id="cartEmpty">
@@ -990,11 +990,11 @@
 
         orderButton.addEventListener("click", () => {
             addToCart(selectedDrink);
-            orderButton.textContent = "Adicionado ao carrinho";
+            orderButton.textContent = "Adicionado";
             orderButton.classList.add("is-added");
 
             setTimeout(() => {
-                orderButton.textContent = "Adicionar pedido";
+                orderButton.textContent = "Adicionar ao carrinho";
                 orderButton.classList.remove("is-added");
             }, 1800);
         });

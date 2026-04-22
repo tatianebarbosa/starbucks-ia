@@ -1151,8 +1151,9 @@ h1 span {
     width: 64px;
     height: 78px;
     object-fit: contain;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.72);
+    border-radius: 0;
+    background: transparent;
+    filter: drop-shadow(0 10px 12px rgba(23, 37, 31, 0.18));
 }
 
 .cart-item-info {

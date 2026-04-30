@@ -95,15 +95,15 @@
         </main>
 
         <section class="drink-picker" id="bebidas" aria-label="Escolha uma bebida">
-            <button class="thumb-button is-active" type="button" data-image="img/img1.png" data-color="#00a7c8"
-                data-soft="rgba(0, 167, 200, 0.34)"
+            <button class="thumb-button is-active" type="button" data-image="img/img1.png" data-color="#00b8a9"
+                data-soft="rgba(0, 184, 169, 0.34)"
                 data-name="Clássico Verde" data-description="Café cremoso, final leve e energia para começar bem."
                 data-size="Grande" data-profile="Leve" data-price="R$ 18,90" data-price-value="18.9"
                 aria-label="Selecionar Clássico Verde">
                 <img src="img/thumb1.png" alt="">
             </button>
-            <button class="thumb-button" type="button" data-image="img/img2.png" data-color="#00a7c8"
-                data-soft="rgba(0, 167, 200, 0.34)"
+            <button class="thumb-button" type="button" data-image="img/img2.png" data-color="#d75287"
+                data-soft="rgba(215, 82, 135, 0.36)"
                 data-name="Creme de Frutas" data-description="Notas doces, textura gelada e um toque frutado marcante."
                 data-size="Pequeno" data-profile="Doce" data-price="R$ 21,50" data-price-value="21.5"
                 aria-label="Selecionar Creme de Frutas">
@@ -577,8 +577,6 @@
         function updateDrinkTheme(button) {
             root.style.setProperty("--accent", button.dataset.color);
             root.style.setProperty("--accent-soft", button.dataset.soft);
-            root.style.setProperty("--cta", button.dataset.color);
-            root.style.setProperty("--cta-soft", button.dataset.soft);
         }
 
         const activeDrinkButton = document.querySelector(".thumb-button.is-active");

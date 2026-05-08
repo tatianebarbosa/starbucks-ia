@@ -45,9 +45,9 @@ body {
     font-family: "Poppins", Arial, sans-serif;
     color: var(--ink);
     background:
-        radial-gradient(circle at 70% 16%, rgba(var(--theme-rgb), 0.14), transparent 25%),
-        radial-gradient(circle at 12% 76%, rgba(var(--theme-rgb), 0.12), transparent 30%),
-        linear-gradient(135deg, rgba(250, 246, 238, 0.96), rgba(var(--theme-rgb), 0.08) 48%, rgba(var(--theme-rgb), 0.1)),
+        radial-gradient(circle at 70% 16%, rgba(215, 82, 135, 0.18), transparent 25%),
+        radial-gradient(circle at 12% 76%, rgba(0, 98, 65, 0.12), transparent 30%),
+        linear-gradient(135deg, rgba(250, 246, 238, 0.96), rgba(241, 247, 241, 0.94) 48%, rgba(255, 239, 246, 0.92)),
         url("img/fundo.jpg") center/cover fixed;
 }
 
@@ -1597,9 +1597,9 @@ h1 span {
     body {
         overflow-x: hidden;
         background:
-            radial-gradient(circle at 50% 28%, rgba(var(--theme-rgb), 0.12), transparent 24%),
-            radial-gradient(circle at 12% 76%, rgba(var(--theme-rgb), 0.1), transparent 28%),
-            linear-gradient(180deg, rgba(250, 246, 238, 0.96), rgba(var(--theme-rgb), 0.08) 54%, rgba(var(--theme-rgb), 0.1)),
+            radial-gradient(circle at 50% 28%, rgba(215, 82, 135, 0.16), transparent 24%),
+            radial-gradient(circle at 12% 76%, rgba(0, 98, 65, 0.1), transparent 28%),
+            linear-gradient(180deg, rgba(250, 246, 238, 0.96), rgba(241, 247, 241, 0.94) 54%, rgba(255, 239, 246, 0.92)),
             url("img/fundo.jpg") center/cover fixed;
     }
 

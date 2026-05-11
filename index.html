@@ -573,12 +573,6 @@
             code: "TATI10",
             discount: 0.1
         };
-        const logoFilters = {
-            "#00b8a9": "hue-rotate(58deg) saturate(1.45) brightness(1.15)",
-            "#d75287": "hue-rotate(150deg) saturate(1.55) brightness(1.18)",
-            "#00a7c8": "hue-rotate(30deg) saturate(1.45) brightness(1.18)"
-        };
-
         function hexToRgb(color) {
             const normalizedColor = color.replace("#", "");
 
@@ -600,7 +594,6 @@
             root.style.setProperty("--line", `rgba(${themeRgb}, 0.14)`);
             root.style.setProperty("--accent-soft", button.dataset.soft);
             root.style.setProperty("--cta-soft", button.dataset.soft);
-            root.style.setProperty("--logo-filter", logoFilters[themeColor.toLowerCase()] || logoFilters["#00a7c8"]);
         }
 
         const activeDrinkButton = document.querySelector(".thumb-button.is-active");
